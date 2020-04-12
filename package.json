@@ -1,19 +1,24 @@
 {
-  "name": "liqpay",
+  "name": "liqpay-sdk",
   "version": "1.0.0",
-  "description": "LiqPay SDK",
+  "description": "SDK from LiqPay integration.",
   "main": "index.js",
   "scripts": {
-    "clear": "npm run clear:js && npm run clear:map.js && npm run clear:d.ts",
-    "clear:js": "",
-    "clear:map.js": "",
-    "clear:d.ts": ""
-
+    "build": "npm run clean && tsc",
+    "clean": "npm run clean:js && npm run clean:map && npm run clean:dts",
+    "clean:js": "find . -name '*.js' -not -wholename '*node_modules*' -type f -delete",
+    "clean:map": "find . -name '*.js.map' -not -wholename '*node_modules*' -type f -delete",
+    "clean:dts": "find . -name '*.d.ts' -not -wholename '*node_modules*' -type f -delete",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kardonv/liqpay.git"
   },
+  "keywords": [
+    "Liqpay",
+    "liqpay sdk"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,5 +27,8 @@
   "homepage": "https://github.com/kardonv/liqpay#readme",
   "dependencies": {
     "@types/node": "^13.11.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
   }
 }

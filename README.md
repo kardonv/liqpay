@@ -1,2 +1,2 @@
-# liqpay
-LiqPay SDK
+# LIQPAY SDK
+
